@@ -19,7 +19,7 @@ class empresasController extends Controller
     }
 
     public function get($id){
-        $empresa = evaluaciontecnica::find($id);
+        $empresa = evaluaciontecnica::findOrFail($id);
         return $empresa;
     }
 

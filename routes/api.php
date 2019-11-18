@@ -21,4 +21,4 @@ Route::get("empresas","empresasController@getAll")->name("getAllEmpresas");
 Route::post("empresas","empresasController@add")->name("addEmpresas");
 Route::get("empresas/{id}","empresasController@get")->name("getEmpresas");
 Route::post("empresas/{id}","empresasController@edit")->name("editEmpresas");
-Route::get("empresas/{id}","empresasController@delete")->name("deleteEmpresas");
+Route::get("empresas/delete/{id}","empresasController@delete")->name("deleteEmpresas");
