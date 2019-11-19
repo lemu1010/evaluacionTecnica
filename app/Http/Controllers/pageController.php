@@ -51,7 +51,7 @@ class pageController extends Controller
     public function crear(Request $request){
         \Log::info('pageController-crear');
         $request->validate([
-            "name" => "required",
+            "name" => "required|unique",
             "numeroDeEmplados" => "min:1",
             "fechaCreacionEmpresa" => "required|before:today"
         ]);

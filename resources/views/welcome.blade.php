@@ -32,8 +32,7 @@
                 <th scope="col">Nombre</th>
                 <th scope="col">Numero de Empleados</th>
                 <th scope="col">Fecha de Creación</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Eliminar</th>
+                <th scope="col">Acciones</th>
               </tr>
             </thead>
             <tbody>
@@ -43,8 +42,9 @@
                 <td>{{$empresa->name}}</td>
                 <td>{{$empresa->numeroDeEmpleados}}</td>
                 <td>{{$empresa->fechaCreacionEmpresa}}</td>
-                <td><a href="{{route('preEditar',$empresa)}}" class="btn btn-primary">Editar</a></td>
-                <td><a href="{{route('preEliminar',$empresa)}}" class="btn btn-primary">Eliminar</a></td>
+                <td><a href="{{route('preEditar',$empresa)}}" class="btn btn-primary btn-sm">Editar</a>
+                    <a href="{{route('preEliminar',$empresa)}}" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
               </tr>
               @endforeach
             </tbody>
