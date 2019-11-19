@@ -10,6 +10,16 @@
         @endif
         <form action="{{route("empresa.crear")}}" method="POST">
           @csrf
+          @if($errors->has("name"))
+            <div class="alert alert-danger alert-dismissible fade show" >
+              El nombre es requerido
+            </div>
+          @endif
+          @if($errors->has("fechaCreacionEmpresa"))
+            <div class="alert alert-danger alert-dismissible fade show" >
+              La Fecha de creacion es requerida
+            </div>
+          @endif
           <input type="text" name="name" placeholder="Nombre" class="form-control mb-2">
           <input type="number" name="numeroDeEmpleados" placeholder="Numero de Empleados" class="form-control mb-2" >
           <input type="date" name="fechaCreacionEmpresa" class="form-control mb-2" >
