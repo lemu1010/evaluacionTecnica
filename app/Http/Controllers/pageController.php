@@ -26,7 +26,7 @@ class pageController extends Controller
     public function eliminar($id){
         $empresa = evaluaciontecnica::find($id);
         $empresa->delete($id);
-        return $this->inicio();
+        return view('eliminar');
     }
 
     public function editar(Request $request){
