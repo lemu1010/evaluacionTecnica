@@ -9,27 +9,32 @@ use App\evaluaciontecnica;
 class pageController extends Controller
 {
     public function inicio(){
+        \Log::info('pageController-inicio');
         $empresas = evaluaciontecnica::all();
         return view('welcome',compact("empresas"));
     }
 
     public function preEditar($id){
+        \Log::info('pageController-preEditar');
         $empresa = evaluaciontecnica::find($id);
         return view('preEditar',compact("empresa"));
     }
 
     public function preEliminar($id){
+        \Log::info('pageController-preEliminar');
         $empresa = evaluaciontecnica::find($id);
         return view('preEliminar',compact("empresa"));
     }
 
     public function eliminar($id){
+        \Log::info('pageController-Eliminar');
         $empresa = evaluaciontecnica::find($id);
         $empresa->delete($id);
         return view('eliminar');
     }
 
     public function editar(Request $request){
+        \Log::info('pageController-editar');
         $request->validate([
             "name" => "required",
             "fechaCreacionEmpresa" => "required"
@@ -43,6 +48,7 @@ class pageController extends Controller
     }
 
     public function crear(Request $request){
+        \Log::info('pageController-crear');
         $request->validate([
             "name" => "required",
             "fechaCreacionEmpresa" => "required"
