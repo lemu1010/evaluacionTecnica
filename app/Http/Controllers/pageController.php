@@ -10,7 +10,7 @@ class pageController extends Controller
 {
     public function inicio(){
         \Log::info('pageController-inicio');
-        $empresas = evaluaciontecnica::all();
+        $empresas = evaluaciontecnica::paginate(3);
         return view('welcome',compact("empresas"));
     }
 
