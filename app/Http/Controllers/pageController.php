@@ -37,7 +37,8 @@ class pageController extends Controller
         \Log::info('pageController-editar');
         $request->validate([
             "name" => "required",
-            "fechaCreacionEmpresa" => "required"
+            "numeroDeEmplados" => "min:1",
+            "fechaCreacionEmpresa" => "required|before:today"
         ]);
         $empresa = evaluaciontecnica::find($request->id);
         $empresa->name = $request->name;
@@ -51,7 +52,8 @@ class pageController extends Controller
         \Log::info('pageController-crear');
         $request->validate([
             "name" => "required",
-            "fechaCreacionEmpresa" => "required"
+            "numeroDeEmplados" => "min:1",
+            "fechaCreacionEmpresa" => "required|before:today"
         ]);
 
         $empresa = new evaluaciontecnica();
